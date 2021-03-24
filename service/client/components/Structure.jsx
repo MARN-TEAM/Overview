@@ -2,6 +2,7 @@ import React from 'react'
 import Rating from './Rating.jsx'
 import Infos from './Infos.jsx'
 import Colors from './colors.jsx'
+import Size from './Size.jsx'
 
 class Structure extends React.Component {
     render() {
@@ -15,6 +16,7 @@ class Structure extends React.Component {
       <Rating/>
       <Infos/>
       <Colors/>
+      <Size/>
   </div>
 </div>
             </div>
