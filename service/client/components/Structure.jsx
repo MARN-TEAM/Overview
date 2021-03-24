@@ -4,6 +4,8 @@ import Infos from './Infos.jsx'
 import Colors from './colors.jsx'
 import Size from './Size.jsx'
 import Quantity from './Quantity.jsx'
+import AddToBag from './AddToBag.jsx'
+import Favorite from './Favorite.jsx'
 
 class Structure extends React.Component {
     render() {
@@ -17,7 +19,9 @@ class Structure extends React.Component {
       <Rating/>
       <Infos/>
       <Colors/>
-      <Size/>  <Quantity/>
+    <div className="row"> <Size/>  <Quantity/></div> 
+    <div className="row">    <AddToBag/>   <Favorite/></div>
+   
     
   </div>
 </div>
