@@ -19,10 +19,8 @@ class Structure extends React.Component {
       <Rating/>
       <Infos/>
       <Colors/>
-    <div className="row"> <Size/>  <Quantity/></div> 
-    <div className="row">    <AddToBag/>   <Favorite/></div>
-   
-    
+    <div className="row position-size-and-quantity" ><Size/><Quantity/></div> 
+    <div className="row position-addtobag-and-favorite"> <AddToBag/><Favorite/></div>
   </div>
 </div>
             </div>

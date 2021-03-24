@@ -3,7 +3,7 @@ import React from 'react'
 class Favorite extends React.Component {
     render() {
         return (
-            <div>
+            <div className="favstar-position">
                <input className="star" type="checkbox" title="bookmark page"/>
             </div>
         )
