@@ -8,7 +8,6 @@ class Size extends React.Component {
   <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
   Size
   </button>
-  
   </div>
   </div>
 
