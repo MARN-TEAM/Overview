@@ -16,8 +16,9 @@ class Structure extends React.Component {
     this.state={
       data:[],
      images:[],
-     colors:[],
-     nums:[]
+     name:[],
+     color:[],
+     sizexquantity:[]
     }
   }
   componentDidMount(){
@@ -49,9 +50,47 @@ axios.get('https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products/11001/sty
 }) 
 .then((res)=>{
 this.setState({
- colors:res.data.results
+ name:[res.data.results[0].name]
 })
-console.log(this.state.colors)
+
+         axios.get('https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products/11001/styles', {
+  headers:{
+      Authorization: token
+  }
+}) 
+.then((res)=>{
+  var storage=[]
+  console.log("zaza",res.data.results)
+for (var i=0;i<res.data.results.length;i++){
+  var element = {color:res.data.results[i].name}
+  var xq = []
+  for (var key in res.data.results[i].skus){
+    xq.push(res.data.results[i].skus[key])
+      }
+      element.sizexquantity=xq
+      storage.push(element)
+}
+
+
+  
+this.setState({
+  
+  sizexquantity: storage[0].sizexquantity
+})
+})
+}
+
+)
+axios.get('https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products/11001/styles', {
+  headers:{
+      Authorization: token
+  }
+}) 
+.then((res)=>{
+this.setState({
+ name:[res.data.results[0].name]
+})
+
          axios.get('https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products/11001/styles', {
   headers:{
       Authorization: token
@@ -59,12 +98,14 @@ console.log(this.state.colors)
 }) 
 .then((res)=>{
 this.setState({
- nums:res.data.results[0].skus
+  color: [res.data.results]
 })
+console.log(this.state.color)
 })
 }
 
-)}
+)
+}
     render() {
         return (
             <div >
@@ -74,9 +115,9 @@ this.setState({
   </div>
   <div   className="col-4" >
       <Rating/>
-      <Infos data={this.state.data} />
-      <Colors/>
-    <div className="row position-size-and-quantity" ><Size/><Quantity/></div> 
+      <Infos data={this.state.data}/>
+      <Colors name={this.state.name}/>
+    <div className="row position-size-and-quantity" ><Size size={this.state.sizexquantity}/><Quantity quantity={this.state.sizexquantity}/></div> 
     <div className="row position-addtobag-and-favorite"> <AddToBag/><Favorite/></div>
   </div>
 </div>
