@@ -2,8 +2,14 @@ import React from 'react'
 import Navbar from './Navbar.jsx'
 import Structure from './Structure.jsx'
 
+
 class App extends React.Component{
-   
+   constructor(props){
+       super(props)
+       this.state={
+       }
+   }
+ 
 
 
     render(){
@@ -11,7 +17,6 @@ class App extends React.Component{
             <div>
             <Navbar/>
             <Structure/>
-
             </div>
         )
     }

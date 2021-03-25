@@ -16,9 +16,12 @@ render() {
             <div>
  <div id="carouselExampleFade" className="carousel slide carousel-fade" data-ride="carousel">
   <div className="carousel-inner">
-    <div className="carousel-item active">
-      <img src="" className="d-block w-100" alt="..."/>
-    </div>
+    {this.props.style.map((element,index)=>
+     <div className="carousel-item active" key={index}>
+     <img src={element.photos} className="d-block w-100" />
+   </div>
+    )}
+   
   </div>
   <a className="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
     <span className="carousel-control-prev-icon" aria-hidden="true"></span>
