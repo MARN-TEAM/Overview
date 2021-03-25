@@ -1,5 +1,9 @@
-body{
+html,body{
     background-color: #FAFAFA;
+    height: 100%;
+    margin:0; 
+    padding:0;
+    overflow-x:hidden;
 }
 
 #app{
@@ -8,7 +12,7 @@ body{
     margin-top: 10px;
     background-color: white;
     border: 0.5px black solid;
-    height: 70vh;
+    height: 100%;
     font-family: “adobe-clean”, sans-serif;
 }
 

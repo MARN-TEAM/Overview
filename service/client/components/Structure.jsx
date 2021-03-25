@@ -15,7 +15,9 @@ class Structure extends React.Component {
     super(props)
     this.state={
       data:[],
-      style:[]
+     images:[],
+     colors:[],
+     nums:[]
     }
   }
   componentDidMount(){
@@ -37,17 +39,38 @@ axios.get('https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products/11001/sty
 }) 
 .then((res)=>{
 this.setState({
-  style:[res.data.results]
+  images:res.data.results[0].photos
 })
-console.log(this.state.style)
+})
+axios.get('https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products/11001/styles', {
+  headers:{
+      Authorization: token
+  }
+}) 
+.then((res)=>{
+this.setState({
+ colors:res.data.results
+})
+console.log(this.state.colors)
+         axios.get('https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products/11001/styles', {
+  headers:{
+      Authorization: token
+  }
+}) 
+.then((res)=>{
+this.setState({
+ nums:res.data.results[0].skus
+})
 })
 }
+
+)}
     render() {
         return (
-            <div>
+            <div >
 <div className="row">
   <div className="col-8"> 
-<ImageGal style={this.state.style}/>
+<ImageGal images={this.state.images}/>
   </div>
   <div   className="col-4" >
       <Rating/>

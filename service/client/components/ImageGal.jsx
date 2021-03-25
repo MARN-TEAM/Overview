@@ -14,14 +14,13 @@ constructor(props){
 render() {
         return (
             <div>
- <div id="carouselExampleFade" className="carousel slide carousel-fade" data-ride="carousel">
+ <div id="carouselExampleFade" className="carousel slide carousel-fade" data-ride="carousel" data-interval="false">
   <div className="carousel-inner">
-    {this.props.style.map((element,index)=>
-     <div className="carousel-item active" key={index}>
-     <img src={element.photos} className="d-block w-100" />
+    {this.props.images.map((element,index)=>
+     <div className={(index == 0)?"carousel-item active" : "carousel-item"} key={index}>
+     <img src={element.url} className="d-block w-100" padding='100%' height="645vh" />
    </div>
     )}
-   
   </div>
   <a className="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
     <span className="carousel-control-prev-icon" aria-hidden="true"></span>
