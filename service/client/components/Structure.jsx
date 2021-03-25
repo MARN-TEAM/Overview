@@ -6,6 +6,7 @@ import Size from './Size.jsx'
 import Quantity from './Quantity.jsx'
 import AddToBag from './AddToBag.jsx'
 import Favorite from './Favorite.jsx'
+import ImageGal from './ImageGal.jsx'
 
 class Structure extends React.Component {
     render() {
@@ -13,9 +14,9 @@ class Structure extends React.Component {
             <div>
 <div className="row">
   <div className="col-8"> 
-
+<ImageGal/>
   </div>
-  <div className="col-4">
+  <div   className="col-4" >
       <Rating/>
       <Infos/>
       <Colors/>

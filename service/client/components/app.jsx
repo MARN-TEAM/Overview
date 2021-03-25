@@ -3,9 +3,7 @@ import Navbar from './Navbar.jsx'
 import Structure from './Structure.jsx'
 
 class App extends React.Component{
-    constructor(props){
-        super(props)
-    }
+   
 
 
     render(){

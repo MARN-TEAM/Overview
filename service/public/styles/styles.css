@@ -8,7 +8,8 @@ body{
     margin-top: 10px;
     background-color: white;
     border: 0.5px black solid;
-    height: 100vh;
+    height: 70vh;
+    font-family: “adobe-clean”, sans-serif;
 }
 
 .navbar-search-btn{
@@ -56,6 +57,8 @@ body{
 .position-star-rating{
     margin-top: 15px;
     margin-bottom : 20px;
+    position: relative;
+    margin-left: -2.4vh ;
 }
 .infos-position{
     margin-bottom:15px;
@@ -70,9 +73,8 @@ body{
         border: 2px solid #555555;
         margin-top: 15px;
     margin-bottom : 20px;
+    padding: 2px;
       }
-  
-  
   .button-add-bag:hover {  
     background-color: #555555;
     color: white;}
@@ -93,6 +95,8 @@ body{
 .position-quantity{
     margin-top: 15px;
     margin-bottom : 20px;
+    position: absolute;
+    margin-left: 25%;
 }
 .size-position{
     margin-top: 15px;
@@ -101,4 +105,16 @@ body{
 .favstar-position{
     position: relative;
     margin-left: 10%;
+    size: 20px;
+}
+.styling-pos{
+    margin-top: 15px;
+    margin-bottom : 20px;
+    position: relative;
+    margin-left: -2vh;
+}
+.rating-sent-pos{    
+    margin-bottom : 10px;
+    position: relative; 
+    text-decoration: underline
 }
