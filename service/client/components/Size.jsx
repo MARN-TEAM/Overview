@@ -7,21 +7,26 @@ class Size extends React.Component {
     }
   }
     render() {
-  console.log("yy",this.props.size)
+      console.log("yy",this.props.organised)
+      
+  if (this.props.organised.length>0){
+    
         return (
 
          
           <div className="size-position">
-            <select  >
- {this.props.size.map((element,i)=>
-   <option key={i}>{element.size}</option>
+            <select className="select-size" onChange={(e)=>this.props.selectedSize(e.target.value)} >
+ {this.props.organised[this.props.selectedIndex].sizexquantity.map((element,i)=>
+   <option value={i}  key={i}>{element.size}</option>
  )}
   </select>
 
      
           </div>
         )
-    }
+    }else{
+      return <div></div>
+    }}
 }
 
 export default Size ;

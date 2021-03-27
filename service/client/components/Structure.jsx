@@ -17,9 +17,12 @@ class Structure extends React.Component {
       data:[],
      images:[],
      name:[],
-     color:[],
-     sizexquantity:[]
+     selectedIndex:0,
+     organised:[],
+     selectedSize:0
     }
+    this.changeSelectedIndex=this.changeSelectedIndex.bind(this)
+    this.changeSelectedsize=this.changeSelectedsize.bind(this)
   }
   componentDidMount(){
     axios.get('https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products/11001', {
@@ -60,23 +63,29 @@ this.setState({
 }) 
 .then((res)=>{
   var storage=[]
-  console.log("zaza",res.data.results)
+  console.log("results",res.data.results)
 for (var i=0;i<res.data.results.length;i++){
-  var element = {color:res.data.results[i].name}
+  var element = {color:res.data.results[i].name,photos:res.data.results[i].photos}
   var xq = []
   for (var key in res.data.results[i].skus){
     xq.push(res.data.results[i].skus[key])
       }
-      element.sizexquantity=xq
+      element.sizexquantity=xq 
+      
       storage.push(element)
+      
 }
+
 
 
   
 this.setState({
   
-  sizexquantity: storage[0].sizexquantity
+ organised:storage
 })
+console.log(this.state.organised,'eee')
+
+
 })
 }
 
@@ -88,36 +97,35 @@ axios.get('https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products/11001/sty
 }) 
 .then((res)=>{
 this.setState({
- name:[res.data.results[0].name]
+ name:[res.data.results]
 })
 
-         axios.get('https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products/11001/styles', {
-  headers:{
-      Authorization: token
-  }
-}) 
-.then((res)=>{
-this.setState({
-  color: [res.data.results]
-})
-console.log(this.state.color)
-})
 }
 
 )
+}
+changeSelectedIndex(i){
+  this.setState({
+    selectedIndex:i
+  })
+}
+changeSelectedsize(i){
+  this.setState({
+    selectedSize:i
+  })
 }
     render() {
         return (
             <div >
 <div className="row">
-  <div className="col-8"> 
-<ImageGal images={this.state.images}/>
+  <div className="col-8 image-pos "> 
+<ImageGal organised={this.state.organised} selectedIndex={this.state.selectedIndex}/>
   </div>
-  <div   className="col-4" >
+  <div   className="col-4 info-pos " >
       <Rating/>
       <Infos data={this.state.data}/>
-      <Colors name={this.state.name}/>
-    <div className="row position-size-and-quantity" ><Size size={this.state.sizexquantity}/><Quantity quantity={this.state.sizexquantity}/></div> 
+      <Colors changeSelected={this.changeSelectedIndex} organised={this.state.organised} images={this.state.images} />
+    <div className="row position-size-and-quantity" ><Size organised={this.state.organised} selectedIndex={this.state.selectedIndex} selectedSize={this.changeSelectedsize} /><Quantity organised={this.state.organised} selectedIndex={this.state.selectedIndex} selectedSize={this.state.selectedSize}/></div> 
     <div className="row position-addtobag-and-favorite"> <AddToBag/><Favorite/></div>
   </div>
 </div>
@@ -126,3 +134,5 @@ console.log(this.state.color)
 }}
 
 export default Structure ;
+
+

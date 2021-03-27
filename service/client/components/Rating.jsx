@@ -1,10 +1,16 @@
 import React, { Component } from 'react'
 
 class Rating extends React.Component {
+  constructor(props){
+    super(props)
+    this.state={
+
+    }
+  }
     render() {
         return (
-            <div className="position-star-rating">
-        <div   className="star-rating" >
+            <div className="position-star-rating row">
+        <div   className="star-rating"  >
       <div className="star-rating__wrap">
         <input className="star-rating__input" id="star-rating-5" type="radio" name="rating" value="5"/>
         <label className="star-rating__ico fa fa-star-o fa-lg" title="5 out of 5 stars"></label>

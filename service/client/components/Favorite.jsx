@@ -4,7 +4,7 @@ class Favorite extends React.Component {
     render() {
         return (
             <div className="favstar-position">
-               <input className="star" type="checkbox" title="bookmark page"/>
+           <input className="star" type="checkbox" title="bookmark page"/> 
             </div>
         )
     }
