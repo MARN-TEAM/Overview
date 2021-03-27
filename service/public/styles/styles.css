@@ -9,7 +9,7 @@ html,body{
 #app{
     width: 940px;
     margin : auto ;
-    margin-top: 10px;
+    margin-top: 5px;
     background-color: white;
     border: 0.5px black solid;
     height: 100%;
@@ -57,6 +57,9 @@ html,body{
     width: 45px;
     height: 45px;
     background-color: #27ae60  ;
+}
+.circle:hover{
+    border: 5px solid black;
 }
 .position-star-rating{
     margin-top: 15px;
@@ -131,12 +134,18 @@ html,body{
     background-color: #a15f3b  ;
   
 }
+.circle2:hover{
+    border: 5px solid black;
+}
 .circle3{
     border-radius: 50%;
     width: 45px;
     height: 45px;
     background-color: #0077be;
   
+}
+.circle3:hover{
+    border: 5px solid black;
 }
 .circle4{
     border-radius: 50%;
@@ -145,19 +154,26 @@ html,body{
     background-color: #FF5733 ;
 
 }
+.circle4:hover{
+    border: 5px solid black;
+}
 .circle5{
     border-radius: 50%;
     width: 45px;
     height: 45px;
     background-color: #87ceeb ;
-
+}
+.circle5:hover{
+    border: 5px solid black;
 }
 .circle6{
     border-radius: 50%;
     width: 45px;
     height: 45px;
     background-color: #A9A9A9  ;
-
+}
+.circle6:hover{
+    border: 5px solid black;
 }
 .circle-pos-pos{
     margin-top: 15px;
@@ -165,6 +181,7 @@ html,body{
     position: relative;
     margin-left: 5%;
 }
+
 .select-size{
     height: 150%;
     width: 170%;
@@ -175,7 +192,7 @@ html,body{
 }
 .info-pos{
     position: relative;
-    bottom: -9vh;
+    bottom: -3vh;
 }
 .image-pos{
 position:relative;
@@ -184,12 +201,49 @@ bottom:-5vh;
 .mes-mes{
     position: relative;
     font-family: italic;
-    margin-left: 20%;
-    font-size: 1.5vh;
+    margin-left: 26.5%;
+    font-size: 2vh;
     margin-bottom: 1%;
 }
 .name-font-size{
     font-family: Arial, sans-serif;
     font-weight: bold;
     font-size: 250%;
+}
+.image-positioné{
+ 
+    margin-top: -80px;
+  
+}
+
+  .logo-colorrrr{
+      color: white;
+      text-decoration: underline;
+      font:italic bold 20px/30px Georgia, serif ;
+  }
+  .input-styling{
+      background-color:#525252 ;
+      border:none;
+      border-bottom: 1px solid white;
+      width: 120px;
+      outline: none;
+      color:white
+  }
+  .Colored-Star-rating{
+    color: #525252;
+    -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 0.8px;
+    -webkit-text-stroke-color: #525252;
+}
+.carousel-posi{
+    position: relative;
+    margin-top: -5%;
+}
+.catcat-posi{
+    position: relative;
+    margin-top: -3vh;
+}
+.pricoux{
+    position: relative;
+    margin-top: 3vh;
 }

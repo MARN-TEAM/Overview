@@ -7,25 +7,42 @@ class Rating extends React.Component {
 
     }
   }
+  RatingStars(averageRate){
+    var storage=[]
+    for(var i=0;i<5;i++){
+        if(averageRate>1){
+            storage.push(1)
+        }else if(averageRate>0){
+            storage.push(averageRate)
+        }else{
+            storage.push(0)
+        }
+        averageRate--
+    }
+    var Stars=<div>
+    {storage.map((e,i)=>{
+        if((e==1)){
+            return(<i className="fa fa-star" key={i}></i>)
+        }else {
+            return(
+<i className="fa fa-star Colored-Star-rating" key={i}
+style={{background: "linear-gradient(90deg,#525252 "+Number(e*100)+"%, white "+Number(e*100)+"%)",
+BackgroundClip:"text",
+TextFillColor:"transparent",
+WebkitBackgroundClip: "text",
+WebkitTextFillColor: "transparent",
+color:"transparent"}}>
+</i>)
+        }
+    } )}
+</div>
+return Stars
+}
     render() {
         return (
             <div className="position-star-rating row">
-        <div   className="star-rating"  >
-      <div className="star-rating__wrap">
-        <input className="star-rating__input" id="star-rating-5" type="radio" name="rating" value="5"/>
-        <label className="star-rating__ico fa fa-star-o fa-lg" title="5 out of 5 stars"></label>
-        <input className="star-rating__input" id="star-rating-4" type="radio" name="rating" value="4"/>
-        <label className="star-rating__ico fa fa-star-o fa-lg"  title="4 out of 5 stars"></label>
-        <input className="star-rating__input" id="star-rating-3" type="radio" name="rating" value="3"/>
-        <label className="star-rating__ico fa fa-star-o fa-lg"  title="3 out of 5 stars"></label>
-        <input className="star-rating__input" id="star-rating-2" type="radio" name="rating" value="2"/>
-        <label className="star-rating__ico fa fa-star-o fa-lg"  title="2 out of 5 stars"></label>
-        <input className="star-rating__input" id="star-rating-1" type="radio" name="rating" value="1"/>
-        <label className="star-rating__ico fa fa-star-o fa-lg"  title="1 out of 5 stars"></label>
-        
-      </div>
       
-    </div>
+   <div style={{fontSize:"9px"}} >{this.RatingStars(2.5)}</div> 
     <h6 className="rating-sent-pos" >Read all reviews</h6>
             </div>
         )

@@ -16,6 +16,7 @@ class App extends React.Component{
         return(
             <div>
             <Navbar/>
+            <h6 className="mes-mes" >SITE-WIDE ANNOUCEMENT MESSAGE - SALE/DISCOUNT OFFER - NEW PRODUCT HIGHLIGHT</h6>
             <Structure/>
             </div>
         )

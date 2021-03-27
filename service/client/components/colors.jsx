@@ -22,7 +22,7 @@ this.props.changeSelected(i)
                 <div className="styling-pos"> 
          
         
-                 <h6>Style:{this.props.organised[this.state.index].color}</h6>
+                 <div>Style : {this.props.organised[this.state.index].color}</div>
                 
                      <div className="circle-pos-pos">
                      <div className="row">

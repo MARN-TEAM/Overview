@@ -18,10 +18,13 @@ this.handleChange=this.handleChange.bind(this)
         return (
             <div >
                 <nav className="navbar navbar-light bg-light justify-content-between " >
-                <a className="navbar-brand">Logo</a>
+                <a className="navbar-brand logo-colorrrr" style={{color:"white"}}>Logo</a>
                 <form className="form-inline">
-                    <input onChange={this.handleChange} className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
-                    <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                   <input onChange={this.props.handleChange} className="input-styling"  ></input>
+                   <button className="fa fa-search" style={{backgroundColor:"transparent" , color:"white" , border:"none"}}></button>
+
+
+                  
                 </form>
                 </nav>
           </div> 
