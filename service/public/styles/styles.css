@@ -57,10 +57,9 @@ html,body{
     width: 45px;
     height: 45px;
     background-color: #27ae60  ;
+  
 }
-.circle:hover{
-    border: 5px solid black;
-}
+
 .position-star-rating{
     margin-top: 15px;
     margin-bottom : 20px;
@@ -103,16 +102,18 @@ html,body{
     margin-top: 15px;
     margin-bottom : 20px;
     position: absolute;
-    margin-left: 25%;
+    margin-left: 45%;
 }
 .size-position{
     margin-top: 15px;
     margin-bottom : 20px;
+ 
 }
 .favstar-position{
     position: relative;
-    margin-left: 10%;
-    size: 20px;
+    margin-left:3vh;
+    border: 30px bold black;
+
 }
 .styling-pos{
     margin-top: 15px;
@@ -132,49 +133,47 @@ html,body{
     width: 45px;
     height: 45px;
     background-color: #a15f3b  ;
+    margin-left: 1vh;
+    margin-right:1vh
   
 }
-.circle2:hover{
-    border: 5px solid black;
-}
+
 .circle3{
     border-radius: 50%;
     width: 45px;
     height: 45px;
     background-color: #0077be;
+    margin-left: -1px;
   
 }
-.circle3:hover{
-    border: 5px solid black;
-}
+
 .circle4{
     border-radius: 50%;
     width: 45px;
     height: 45px;
     background-color: #FF5733 ;
+    margin-left: 3.3px;
+    
+}
 
-}
-.circle4:hover{
-    border: 5px solid black;
-}
 .circle5{
     border-radius: 50%;
     width: 45px;
     height: 45px;
     background-color: #87ceeb ;
+
 }
-.circle5:hover{
-    border: 5px solid black;
-}
+
 .circle6{
     border-radius: 50%;
     width: 45px;
     height: 45px;
     background-color: #A9A9A9  ;
+    margin-left: 1vh;
+    margin-right:1vh;
+   
 }
-.circle6:hover{
-    border: 5px solid black;
-}
+
 .circle-pos-pos{
     margin-top: 15px;
     margin-bottom : 20px;
@@ -185,18 +184,28 @@ html,body{
 .select-size{
     height: 150%;
     width: 170%;
+    width: 120px;
+    border: 1px solid black;
 }
 .select-quantity{
     width: 120%;
-    margin-left: 30%;
+    margin-left: -30%;
+    width: 70px;
+  border: 1px solid black;
+}
+.select-quantity{
+    padding:7px
 }
 .info-pos{
     position: relative;
     bottom: -3vh;
 }
 .image-pos{
-position:relative;
-bottom:-5vh;
+position:static ;
+
+width:90%;
+height: 30%;
+
 }
 .mes-mes{
     position: relative;
@@ -210,11 +219,6 @@ bottom:-5vh;
     font-weight: bold;
     font-size: 250%;
 }
-.image-positioné{
- 
-    margin-top: -80px;
-  
-}
 
   .logo-colorrrr{
       color: white;
@@ -224,20 +228,16 @@ bottom:-5vh;
   .input-styling{
       background-color:#525252 ;
       border:none;
-      border-bottom: 1px solid white;
-      width: 120px;
+      border-bottom: 2px solid white;
+      width: 170px;
       outline: none;
       color:white
   }
   .Colored-Star-rating{
     color: #525252;
-    -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+    -webkit-text-fill-color: white; 
     -webkit-text-stroke-width: 0.8px;
     -webkit-text-stroke-color: #525252;
-}
-.carousel-posi{
-    position: relative;
-    margin-top: -5%;
 }
 .catcat-posi{
     position: relative;
@@ -246,4 +246,25 @@ bottom:-5vh;
 .pricoux{
     position: relative;
     margin-top: 3vh;
+}
+.circle-clicked{
+    border:2px black solid;
+}
+.zoomchecki:active{
+    transform: scale(1.9);
+    cursor: zoom-out;
+}
+.search-result{
+
+   margin-left: 42.3%;
+   position: absolute;
+   background-color: #f1f2f6;
+   font-family: "adobe-clean", sans-serif;;
+   font-size: 15px;
+   width: 160px;
+   z-index:1;
+}
+.search-element:hover{
+    background-color: white;
+    cursor: pointer;
 }

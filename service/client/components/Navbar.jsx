@@ -1,18 +1,40 @@
+import axios from 'axios'
 import React from 'react'
+import {token} from '../../config.js'
 
 class Navbar extends React.Component {
     constructor(props){
         super(props)
         this.state={
-            search:""
+            search:[],
+            data:[]
         }
 this.handleChange=this.handleChange.bind(this)
     }
     handleChange(e){
-        this.setState({
-            search:e.target.value
-        })
+        if(e.target.value == ''){
+            this.setState({search:[]})
+            return
+        }
+        var data=this.state.data
+        var storage=[]
+      for (var i=0;data.length>i;i++){
+          if(data[i].name.toLowerCase().includes(e.target.value.toLowerCase())){
+              storage.push(data[i])
+          }
+      }
+      this.setState({search:storage})
     }
+    componentDidMount(){
+        axios.get('https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products',{    
+            headers:{
+            Authorization: token
+        }
+    })
+    .then((res)=>
+    this.setState({data:res.data}))
+    }
+
  
     render() {
         return (
@@ -20,13 +42,16 @@ this.handleChange=this.handleChange.bind(this)
                 <nav className="navbar navbar-light bg-light justify-content-between " >
                 <a className="navbar-brand logo-colorrrr" style={{color:"white"}}>Logo</a>
                 <form className="form-inline">
-                   <input onChange={this.props.handleChange} className="input-styling"  ></input>
-                   <button className="fa fa-search" style={{backgroundColor:"transparent" , color:"white" , border:"none"}}></button>
+                   <input onChange={(e)=>this.handleChange(e)} className="input-styling"  ></input>
+                   <button className="fa fa-search" style={{backgroundColor:"transparent" , color:"white" , border:"none", padding:"16px 19px"}}></button>
 
 
                   
                 </form>
                 </nav>
+                <div className="search-result"> {this.state.search.map((e,i)=> 
+<div className="search-element" onClick={()=>this.props.changeId(e.id)} >{e.name}</div>)}
+</div>
           </div> 
         )
     }

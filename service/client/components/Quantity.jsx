@@ -21,8 +21,8 @@ arr.push(i)
             <div className="position-quantity">
        <select className="select-quantity"> 
  {arr.map((element,i)=>
- <option value={i+1} key={i}>{element +1}</option>
- )} </select>
+ <option value={i+1} key={i}>{element+1}</option>)} 
+ </select>
 
             </div>
         )

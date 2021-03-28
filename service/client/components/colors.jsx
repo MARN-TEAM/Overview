@@ -8,9 +8,15 @@ class Colors extends React.Component {
         }
     }
   
-   handleClick(i){
+   handleClick(i,e){
         this.setState({index:i})
 this.props.changeSelected(i)
+const accordionItems = [...document.getElementsByClassName('accordion-item')]
+console.log(accordionItems,"dzdzdz")
+accordionItems.forEach(accordionItem => {
+  accordionItem.classList.remove('circle-clicked')
+})
+e.target.classList.add('circle-clicked')
     }
 
 
@@ -26,14 +32,14 @@ this.props.changeSelected(i)
                 
                      <div className="circle-pos-pos">
                      <div className="row">
-                     <div className="circle" onClick={()=>this.handleClick(0)}></div>
-                     <div className="circle2"onClick={()=>this.handleClick(1)}></div>
-                     <div className="circle3"onClick={()=>this.handleClick(2)}></div>
-                     <div className="circle4"onClick={()=>this.handleClick(3)} ></div>
+                     <div className="circle accordion-item" onClick={(e)=>this.handleClick(0,e)}></div>
+                     <div className="circle2 accordion-item"onClick={(e)=>this.handleClick(1,e)}></div>
+                     <div className="circle3 accordion-item"onClick={(e)=>this.handleClick(2,e)}></div>
+                     <div className="circle4 accordion-item"onClick={(e)=>this.handleClick(3,e)} ></div>
                      </div>
                      <div className="row">
-                     <div className="circle5"onClick={()=>this.handleClick(4)} ></div>
-                     <div className="circle6"onClick={()=>this.handleClick(5)} ></div>
+                     <div className="circle5 accordion-item"onClick={(e)=>this.handleClick(4,e)} ></div>
+                     <div className="circle6 accordion-item"onClick={(e)=>this.handleClick(5,e)} ></div>
                      </div>
                      </div>
          
