@@ -10,9 +10,10 @@ outfit:[]
     }
     render() {
         return (
-            <div>
-                <button className="button-add-bag"> ADD TO BAG +</button>
-            </div>
+            <div class="buy-button-container btn-positi">
+            <a class="buy-button" id="explosion">Add to bag</a>
+            <canvas id="exploding-canvas" class="party-explosion" width="200" height="200"> </canvas>
+        </div>
         )
     }
 }
